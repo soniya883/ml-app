@@ -2,6 +2,9 @@ import streamlit as st
 import pickle
 import numpy as np
 
+data = {"model": regressor, "le_country": le_country, "le_education": le_education}
+with open('saved_steps.pkl', 'wb') as file:
+    pickle.dump(data, file)
 
 def load_model():
     with open('saved_steps.pkl', 'rb') as file:
