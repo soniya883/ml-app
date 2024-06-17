@@ -2,17 +2,6 @@ import streamlit as st
 import pickle
 import numpy as np
 
-with open('model.pkl', 'rb') as file:
-    regressor = pickle.load(file)
-
-with open('le_country.pkl', 'rb') as file:
-    le_country = pickle.load(file)
-
-with open('le_education.pkl', 'rb') as file:
-    le_education = pickle.load(file)
-
-# Now all the variables should be defined and can be used safely
-data = {"model": regressor, "le_country": le_country, "le_education": le_education}
 
 def load_model():
     with open('saved_steps.pkl', 'rb') as file:
